@@ -1,0 +1,73 @@
+﻿#region Menu 모델 클래스 테스트
+
+            Menu m1 = new Menu();
+
+            m1.MenuId = 1;
+            m1.MenuName = "책";
+            m1.MenuPath = "/Home";
+            WriteLine($"{m1.MenuId} - {m1.MenuName}");
+
+            WriteLine();
+
+            List<Menu> m2 = new List<Menu>()
+            {
+                new Menu{ MenuId = 1, MenuName = "책" },
+                new Menu{ MenuId = 2, MenuName = "강의" },
+                new Menu{ MenuId = 3, MenuName = "컴퓨터" }
+            };
+
+
+            foreach (var m in m2)
+            {
+                WriteLine($"{m.MenuId} - {m.MenuName}");
+            }
+
+            WriteLine();
+
+            #endregion
+
+
+            #region 인 - 메모리 데이터 사용 출력
+
+            //인 - 메모리 데이터 사용 출력
+            MenuDataInMemory inMemory = new MenuDataInMemory();
+            foreach (var i in inMemory.GetAll())
+            {
+                WriteLine($"{i.MenuId} - {i.MenuName}");
+            }
+
+            WriteLine();
+
+            #endregion
+
+            #region 컨테이너 클래스를 통하여 개체를 생성
+
+            //컨테이너 클래스를 통하여 개체를 생성
+            //InMemory
+            var container = new MenuProviderContainer(new MenuDataInMemory()); //메뉴 클래스를 주입
+            foreach (var c in inMemory.GetAll())
+            {
+                WriteLine($"{c.MenuId} - {c.MenuName}");
+            }
+
+            WriteLine();
+
+            //Xml
+            //var xml = new MenuProviderContainer(new MenuDataInXml());
+            //foreach (var x in xml.GetAll())
+            //{
+            //    WriteLine($"{x.MenuId} - {x.MenuName}");
+            //}
+
+            //WriteLine();
+
+            //SQL
+            //var sql = new MenuProviderContainer(new MenuDataInSql());
+            //foreach (var s in sql.GetAll())
+            //{
+            //    WriteLine($"{s.MenuId} - {s.MenuName}");
+            //}
+
+            //WriteLine();
+
+            #endregion

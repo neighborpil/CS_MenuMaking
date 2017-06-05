@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menus>
+  <Menu>
+    <MenuId>1</MenuId>
+    <MenuOrder>1</MenuOrder>
+    <ParentId>0</ParentId>
+    <MenuName>책(XML)</MenuName>
+    <MenuPath>/Hone/Book</MenuPath>
+  </Menu>
+  <Menu>
+    <MenuId>2</MenuId>
+    <MenuOrder>2</MenuOrder>
+    <ParentId>0</ParentId>
+    <MenuName>강의(XML)</MenuName>
+    <MenuPath>/Hone/Lecture</MenuPath>
+  </Menu>
+  <Menu>
+    <MenuId>3</MenuId>
+    <MenuOrder>3</MenuOrder>
+    <ParentId>1</ParentId>
+    <MenuName>좋은책(XML)</MenuName>
+    <MenuPath>/Hone/Lecture</MenuPath>
+  </Menu>
+  <Menu>
+    <MenuId>4</MenuId>
+    <MenuOrder>4</MenuOrder>
+    <ParentId>1</ParentId>
+    <MenuName>나쁜책(XML)</MenuName>
+    <MenuPath>/Hone/Lecture</MenuPath>
+  </Menu>
+</Menus>
